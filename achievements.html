@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | ScholarSync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
+        #sidebar-wrapper { min-height: 100vh; width: 260px; background-color: #0f172a; color: white; }
+        .list-group-item { background: transparent; color: rgba(255,255,255,0.7); border: none; padding: 12px 24px; }
+        .list-group-item:hover { color: white; background: rgba(255,255,255,0.1); }
+        .list-group-item.active { background-color: #0d6efd; color: white; }
+        
+        .cert-card { border: 1px solid #e2e8f0; transition: all 0.2s; position: relative; overflow: hidden; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #0d6efd; }
+        .cert-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+<div class="d-flex">
+    <div id="sidebar-wrapper">
+        <div class="py-4 px-4 border-bottom border-secondary">
+            <h4 class="fw-bold m-0"><i class="bi bi-layers-fill me-2 text-primary"></i>ScholarSync</h4>
+        </div>
+        <div class="list-group list-group-flush mt-3">
+            <a href="dashboard.html" class="list-group-item"><i class="bi bi-grid me-2"></i> Dashboard</a>
+            <a href="academics.html" class="list-group-item"><i class="bi bi-mortarboard me-2"></i> Academics</a>
+            <a href="achievements.html" class="list-group-item active"><i class="bi bi-trophy-fill me-2"></i> Achievements</a>
+            <button onclick="handleLogout()" class="list-group-item text-danger mt-5 w-100 text-start">
+                <i class="bi bi-box-arrow-left me-2"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <div class="w-100">
+        <nav class="navbar navbar-light bg-white border-bottom px-4 py-3">
+            <h5 class="m-0 fw-bold">Achievement Vault</h5>
+            <div class="ms-auto d-flex align-items-center">
+                <span id="userNameDisplay" class="me-3 small fw-bold">Guest User</span>
+                <div id="userInitialDisplay" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">G</div>
+            </div>
+        </nav>
+
+        <div class="container-fluid p-4">
+            
+            <div class="d-flex mb-4 gap-2">
+                <button class="btn btn-dark px-4 rounded-pill">All</button>
+                <button class="btn btn-outline-secondary px-4 rounded-pill">Technical</button>
+                <button class="btn btn-outline-secondary px-4 rounded-pill">Sports</button>
+                <button class="btn btn-outline-secondary px-4 rounded-pill">Cultural</button>
+            </div>
+
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="card cert-card p-4 h-100 rounded-3">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="cert-icon bg-info bg-opacity-10 text-info">
+                                <i class="bi bi-code-square"></i>
+                            </div>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success">Verified</span>
+                        </div>
+                        <h5 class="fw-bold mb-1">Hackathon Winner</h5>
+                        <p class="text-muted small">National Level Coding Contest 2025</p>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="bi bi-calendar3 me-1"></i> Oct 12, 2025</small>
+                            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-download"></i> Proof</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card cert-card p-4 h-100 rounded-3">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="cert-icon bg-warning bg-opacity-10 text-warning">
+                                <i class="bi bi-trophy"></i>
+                            </div>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success">Verified</span>
+                        </div>
+                        <h5 class="fw-bold mb-1">Volleyball Captain</h5>
+                        <p class="text-muted small">Inter-University Sports Meet</p>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="bi bi-calendar3 me-1"></i> Nov 05, 2025</small>
+                            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-download"></i> Proof</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card cert-card p-4 h-100 rounded-3">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="cert-icon bg-danger bg-opacity-10 text-danger">
+                                <i class="bi bi-patch-check"></i>
+                            </div>
+                            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning">Pending</span>
+                        </div>
+                        <h5 class="fw-bold mb-1">Python Bootcamp</h5>
+                        <p class="text-muted small">Udemy Certification</p>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="bi bi-calendar3 me-1"></i> Jan 10, 2026</small>
+                            <button class="btn btn-sm btn-outline-secondary disabled"><i class="bi bi-clock"></i> Reviewing</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Standard User Check
+    const savedName = localStorage.getItem('scholarName');
+    if (savedName) {
+        document.getElementById('userNameDisplay').innerText = savedName + " (CS 2nd Year)";
+        document.getElementById('userInitialDisplay').innerText = savedName.charAt(0).toUpperCase();
+    } else {
+        window.location.href = 'index.html';
+    }
+
+    function handleLogout() {
+        localStorage.removeItem('scholarName');
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>
