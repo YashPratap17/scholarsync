@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
+        
+        /* Sidebar Styles */
         #sidebar-wrapper { min-height: 100vh; width: 260px; background-color: #0f172a; color: white; transition: all 0.3s; }
+        
         .list-group-item { background: transparent; color: rgba(255,255,255,0.7); border: none; padding: 12px 24px; }
         .list-group-item:hover { color: white; background: rgba(255,255,255,0.1); }
         .list-group-item.active { background-color: #0d6efd; color: white; }
+        
+        /* Interactive Cards */
         .vault-item { transition: transform 0.2s; cursor: pointer; border: 1px solid #e2e8f0; }
         .vault-item:hover { transform: translateY(-5px); border-color: #0d6efd; box-shadow: 0 4px 12px rgba(13,110,253,0.1); }
         .icon-box { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
@@ -25,9 +30,9 @@
             <h4 class="fw-bold m-0"><i class="bi bi-layers-fill me-2 text-primary"></i>ScholarSync</h4>
         </div>
         <div class="list-group list-group-flush mt-3">
-            <a href="#" class="list-group-item active"><i class="bi bi-grid-fill me-2"></i> Dashboard</a>
-            <a href="#" class="list-group-item"><i class="bi bi-mortarboard me-2"></i> Academics</a>
-            <a href="#" class="list-group-item"><i class="bi bi-trophy me-2"></i> Achievements</a>
+            <a href="dashboard.html" class="list-group-item active"><i class="bi bi-grid-fill me-2"></i> Dashboard</a>
+            <a href="academics.html" class="list-group-item"><i class="bi bi-mortarboard me-2"></i> Academics</a>
+            <a href="achievements.html" class="list-group-item"><i class="bi bi-trophy me-2"></i> Achievements</a>
             <button onclick="handleLogout()" class="list-group-item text-danger mt-5 w-100 text-start">
                 <i class="bi bi-box-arrow-left me-2"></i> Logout
             </button>
@@ -113,7 +118,7 @@
         }
     }
 
-    // 4. CHECK USER LOGIN (The Logic)
+    // 4. CHECK USER LOGIN & Update Sidebar
     window.onload = function() {
         // Retrieve name from browser memory
         const savedName = localStorage.getItem('scholarName');
@@ -124,8 +129,8 @@
             // Update Initial
             document.getElementById('userInitialDisplay').innerText = savedName.charAt(0).toUpperCase();
         } else {
-            // If no user found, maybe redirect to login?
-             window.location.href = 'index.html';
+            // Redirect to index.html (Login) if not logged in
+            window.location.href = 'index.html';
         }
     };
 
