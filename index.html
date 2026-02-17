@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ScholarSync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-header {
+            background: #0d6efd;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="login-header">
+        <h3 class="fw-bold m-0"><i class="bi bi-layers-fill me-2"></i>ScholarSync</h3>
+        <p class="small opacity-75 mb-0">Centralized Student Record</p>
+    </div>
+    <div class="p-4">
+        <form onsubmit="handleLogin(event)">
+            <div class="mb-3">
+                <label class="form-label text-muted small fw-bold">STUDENT ID / EMAIL</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-person"></i></span>
+                    <input type="text" class="form-control border-start-0 bg-light" placeholder="e.g. 2024CS101" required>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label text-muted small fw-bold">PASSWORD</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock"></i></span>
+                    <input type="password" class="form-control border-start-0 bg-light" placeholder="••••••••" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold shadow-sm">Sign In</button>
+        </form>
+        <div class="text-center mt-4">
+            <p class="small text-muted">Don't have an account? <a href="register.html" class="text-primary fw-bold text-decoration-none">Register Here</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function handleLogin(event) {
+        event.preventDefault();
+        // In a real app, you'd check passwords here. 
+        // For now, we just go to dashboard.
+        window.location.href = 'dashboard.html';
+    }
+</script>
+
+</body>
+</html>

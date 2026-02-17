@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | ScholarSync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        .register-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .left-panel {
+            background: #0d6efd;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-card row g-0">
+    <div class="col-md-5 left-panel text-center text-md-start">
+        <h2 class="fw-bold mb-3">Join ScholarSync</h2>
+        <p class="opacity-75 mb-4">Create your comprehensive student activity profile. Track scores, hackathons, and sports in one secure vault.</p>
+        <div class="d-none d-md-block">
+            <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-check-circle-fill me-3"></i> <span>Verify Achievements</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-check-circle-fill me-3"></i> <span>Connect with Faculty</span>
+            </div>
+            <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill me-3"></i> <span>Build your Portfolio</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7 p-5">
+        <h4 class="fw-bold text-dark mb-4">Student Registration</h4>
+        
+        <form onsubmit="handleRegister(event)">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted">FULL NAME</label>
+                    <input type="text" id="regName" class="form-control bg-light" placeholder="Yash P." required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted">COLLEGE EMAIL</label>
+                    <input type="email" class="form-control bg-light" placeholder="yash@college.edu" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted">ROLL NUMBER</label>
+                    <input type="text" class="form-control bg-light" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted">BRANCH / YEAR</label>
+                    <select class="form-select bg-light">
+                        <option>Computer Science</option>
+                        <option>Information Tech</option>
+                        <option>Electronics</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label small fw-bold text-muted">CREATE PASSWORD</label>
+                    <input type="password" class="form-control bg-light" required>
+                </div>
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">Create Account</button>
+                </div>
+            </div>
+        </form>
+        
+        <p class="text-center mt-4 small">Already have an ID? <a href="login.html" class="text-decoration-none fw-bold">Login</a></p>
+    </div>
+</div>
+
+<script>
+    function handleRegister(event) {
+        event.preventDefault(); // Stop page reload
+        
+        // 1. Get the name user typed
+        const name = document.getElementById('regName').value;
+        
+        // 2. Save to Browser Memory
+        if(name) {
+            localStorage.setItem('scholarName', name);
+            // 3. Go to Login
+            window.location.href = 'login.html';
+        }
+    }
+</script>
+
+</body>
+</html>
