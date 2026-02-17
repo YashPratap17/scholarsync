@@ -125,14 +125,14 @@
             document.getElementById('userInitialDisplay').innerText = savedName.charAt(0).toUpperCase();
         } else {
             // If no user found, maybe redirect to login?
-             window.location.href = 'login.html';
+             window.location.href = 'index.html';
         }
     };
 
     // 5. Logout Function
     function handleLogout() {
         localStorage.removeItem('scholarName'); // Clear memory
-        window.location.href = 'login.html'; // Go back to login
+        window.location.href = 'index.html'; // Go back to login
     }
 
     render();
